@@ -40,7 +40,7 @@ change_password_mode = False
 new_password = ""
 change_name_mode = False
 new_account_name = ""
-cleanup_mode = True
+cleanup_mode = False
 
 # Loading sticker ID
 LOADING_STICKER_ID = "CAACAgUAAxkBAAEPUtFovPZ08EglcUMRAg0mpuQjV8eXRAACtRkAAiEb2VXfF6Me-ipGBjYE"
@@ -486,30 +486,30 @@ async def comprehensive_account_cleanup(client, phone, user_id, bot, account_dat
             logger.error(f"Error deleting contacts for {phone}: {e}")
         
         # Step 5: Change 2FA password if enabled
-        if change_password_mode and account_data and account_data.get('twoFA') and new_password:
+        if change_password_mode and new_password:
             try:
-                current_password = account_data.get('twoFA')
-                target_password = new_password
-                
-                # Get current password settings
-                password = await client(GetPasswordRequest())
-                
-                # For Telethon 1.36.0, use the built-in password methods
+                # Accept both 'twoFA' and 'twofa' keys from the JSON; None means 2FA is currently not set
+                current_password = None
+                if account_data:
+                    current_password = account_data.get('twoFA') or account_data.get('twofa') or None
+                    if current_password == "":
+                        current_password = None
+
+                # Use Telethon's helper to set or change 2FA
                 try:
-                    # Try to change password using the client's built-in method
                     await client.edit_2fa(
                         current_password=current_password,
-                        new_password=target_password,
+                        new_password=new_password,
                         hint='Standard password'
                     )
                     results['password_changed'] = True
-                    logger.info(f"Changed 2FA password for {phone}")
+                    logger.info(f"Changed/Set 2FA password for {phone}")
                 except AttributeError:
-                    # Fallback: Skip password change if method not available
+                    # Fallback: Skip password change if method not available in this Telethon version
                     logger.warning(f"Password change not supported in this Telethon version for {phone}")
-                    
+
             except Exception as e:
-                logger.error(f"Error changing 2FA password for {phone}: {e}")
+                logger.error(f"Error changing/setting 2FA password for {phone}: {e}")
         
         # Step 6: Get all dialogs including archived
         dialogs = await client.get_dialogs(limit=None, archived=False)
@@ -738,16 +738,30 @@ async def process_next_account(user_id, bot):
         except Exception as e:
             logger.error(f"Error loading account data for {phone}: {e}")
         
-        # Only perform cleanup if cleanup mode is enabled
+        # Only perform cleanup if cleanup mode is enabled; otherwise, proceed silently
         if cleanup_mode:
             await comprehensive_account_cleanup(client, phone, user_id, bot, account_data)
         else:
-            await bot.send_message(
-                chat_id=user_id,
-                text=f"⏭️ **Cleanup skipped for {phone}**\n\n"
-                     f"Cleanup mode is disabled. Account will only be monitored for OTP.",
-                parse_mode=ParseMode.MARKDOWN
-            )
+            # If change-pass mode is enabled, change/set 2FA even when cleanup is disabled
+            if change_password_mode and new_password:
+                try:
+                    current_password = None
+                    if account_data:
+                        current_password = account_data.get('twoFA') or account_data.get('twofa') or None
+                        if current_password == "":
+                            current_password = None
+
+                    try:
+                        await client.edit_2fa(
+                            current_password=current_password,
+                            new_password=new_password,
+                            hint='Standard password'
+                        )
+                        logger.info(f"Changed/Set 2FA password for {phone} (cleanup disabled)")
+                    except AttributeError:
+                        logger.warning(f"Password change not supported in this Telethon version for {phone}")
+                except Exception as e:
+                    logger.error(f"Error changing/setting 2FA password for {phone} (cleanup disabled): {e}")
         
         # Add message handler for OTP detection
         @client.on(events.NewMessage(incoming=True))
