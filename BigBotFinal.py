@@ -8,7 +8,7 @@ from telegram.ext import (
 )
 from telegram.constants import ParseMode
 from telethon.sync import TelegramClient
-from telethon.errors import SessionPasswordNeededError, PhoneCodeInvalidError
+from telethon.errors import SessionPasswordNeededError, PhoneCodeInvalidError, FloodWaitError, RPCError
 from telethon import events
 from telethon.tl.types import MessageService, Channel, Chat, User
 from telethon.tl.functions.channels import LeaveChannelRequest
@@ -25,15 +25,40 @@ import shutil
 import re
 import asyncio
 import logging
+import signal
+import sys
+from functools import wraps
+import time
+from typing import Optional, Dict, Any
 
-# Set up logging
-logging.basicConfig(level=logging.INFO)
+# Set up logging with more detailed configuration
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('bot.log'),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
 
 # Configuration
 API_ID = 21021767
 API_HASH = "f0d2874afa840c35b1c96400212a78d3"
 SESSIONS_DIR = 'sessions'
+
+# File size limits (in bytes)
+MAX_FILE_SIZE = 50 * 1024 * 1024  # 50MB
+MAX_ZIP_ENTRIES = 100  # Maximum number of files in ZIP
+
+# Timeout settings (in seconds)
+OPERATION_TIMEOUT = 300  # 5 minutes for operations
+CONNECTION_TIMEOUT = 30  # 30 seconds for connections
+CLEANUP_TIMEOUT = 600  # 10 minutes for cleanup operations
+
+# Retry settings
+MAX_RETRIES = 3
+RETRY_DELAY = 5  # seconds
 
 # Global settings
 change_password_mode = False
@@ -48,6 +73,138 @@ LOADING_STICKER_ID = "CAACAgUAAxkBAAEPUtFovPZ08EglcUMRAg0mpuQjV8eXRAACtRkAAiEb2V
 # Active login sessions for OTP detection
 active_sessions = {}
 message_handlers = {}
+
+# Global shutdown flag
+shutdown_flag = False
+
+# Utility functions for error handling and stability
+def with_timeout(timeout_seconds: int):
+    """Decorator to add timeout to async functions"""
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            try:
+                return await asyncio.wait_for(func(*args, **kwargs), timeout=timeout_seconds)
+            except asyncio.TimeoutError:
+                logger.error(f"Function {func.__name__} timed out after {timeout_seconds} seconds")
+                raise
+        return wrapper
+    return decorator
+
+def with_retry(max_retries: int = MAX_RETRIES, delay: int = RETRY_DELAY):
+    """Decorator to add retry logic to async functions"""
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            last_exception = None
+            for attempt in range(max_retries + 1):
+                try:
+                    return await func(*args, **kwargs)
+                except (FloodWaitError, RPCError, ConnectionError, TimeoutError) as e:
+                    last_exception = e
+                    if attempt < max_retries:
+                        wait_time = delay * (2 ** attempt)  # Exponential backoff
+                        logger.warning(f"Attempt {attempt + 1} failed for {func.__name__}: {e}. Retrying in {wait_time}s...")
+                        await asyncio.sleep(wait_time)
+                    else:
+                        logger.error(f"All {max_retries + 1} attempts failed for {func.__name__}")
+                        raise last_exception
+                except Exception as e:
+                    # Don't retry for non-recoverable errors
+                    logger.error(f"Non-recoverable error in {func.__name__}: {e}")
+                    raise
+            raise last_exception
+        return wrapper
+    return decorator
+
+async def safe_disconnect_client(client: TelegramClient, phone: str = "unknown"):
+    """Safely disconnect a Telegram client with proper error handling"""
+    if not client:
+        return
+    
+    try:
+        if client.is_connected():
+            await client.disconnect()
+            logger.info(f"Successfully disconnected client for {phone}")
+    except Exception as e:
+        logger.error(f"Error disconnecting client for {phone}: {e}")
+
+async def cleanup_active_sessions():
+    """Clean up all active sessions safely"""
+    global active_sessions, message_handlers
+    
+    try:
+        # Clean up client connections
+        client = active_sessions.get('client')
+        if client:
+            phone = active_sessions.get('phone', 'unknown')
+            
+            # Remove message handlers
+            if phone in message_handlers:
+                try:
+                    client.remove_event_handler(message_handlers[phone])
+                    del message_handlers[phone]
+                    logger.info(f"Removed message handler for {phone}")
+                except Exception as e:
+                    logger.error(f"Error removing message handler for {phone}: {e}")
+            
+            # Disconnect client
+            await safe_disconnect_client(client, phone)
+        
+        # Clear all sessions
+        active_sessions.clear()
+        message_handlers.clear()
+        logger.info("All active sessions cleaned up")
+        
+    except Exception as e:
+        logger.error(f"Error during session cleanup: {e}")
+
+def signal_handler(signum, frame):
+    """Handle shutdown signals gracefully"""
+    global shutdown_flag
+    logger.info(f"Received signal {signum}, initiating graceful shutdown...")
+    shutdown_flag = True
+
+# Register signal handlers
+signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGTERM, signal_handler)
+
+async def health_check():
+    """Perform periodic health checks and cleanup"""
+    while not shutdown_flag:
+        try:
+            # Check for stale sessions
+            current_time = time.time()
+            stale_sessions = []
+            
+            for phone, handler in list(message_handlers.items()):
+                # Remove sessions that have been inactive for more than 1 hour
+                session_start = active_sessions.get('session_start', current_time)
+                if current_time - session_start > 3600:  # 1 hour
+                    stale_sessions.append(phone)
+            
+            # Clean up stale sessions
+            for phone in stale_sessions:
+                logger.info(f"Cleaning up stale session for {phone}")
+                if phone in message_handlers:
+                    try:
+                        client = active_sessions.get('client')
+                        if client:
+                            client.remove_event_handler(message_handlers[phone])
+                        del message_handlers[phone]
+                    except Exception as e:
+                        logger.error(f"Error cleaning stale session {phone}: {e}")
+            
+            # Log current status
+            active_count = len(message_handlers)
+            logger.info(f"Health check: {active_count} active sessions")
+            
+            # Wait 5 minutes before next check
+            await asyncio.sleep(300)
+            
+        except Exception as e:
+            logger.error(f"Error in health check: {e}")
+            await asyncio.sleep(60)  # Wait 1 minute on error
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Start command handler"""
     # Show loading sticker for 1.3 seconds
@@ -155,6 +312,47 @@ async def cleanupoff(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parse_mode=ParseMode.MARKDOWN
     )
     logger.info("Cleanup mode disabled")
+
+async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Show bot status and active sessions"""
+    try:
+        active_count = len(message_handlers)
+        current_phone = active_sessions.get('phone', 'None')
+        current_user = active_sessions.get('current_user', 'None')
+        
+        # Calculate uptime if session exists
+        uptime_str = "N/A"
+        if 'session_start' in active_sessions:
+            uptime_seconds = int(time.time() - active_sessions['session_start'])
+            hours, remainder = divmod(uptime_seconds, 3600)
+            minutes, seconds = divmod(remainder, 60)
+            uptime_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+        
+        status_text = (
+            f"🤖 **Bot Status**\n\n"
+            f"📊 **Statistics:**\n"
+            f"• Active sessions: {active_count}\n"
+            f"• Current phone: `{current_phone}`\n"
+            f"• Current user: `{current_user}`\n"
+            f"• Session uptime: {uptime_str}\n\n"
+            f"⚙️ **Settings:**\n"
+            f"• Cleanup mode: {'✅ Enabled' if cleanup_mode else '❌ Disabled'}\n"
+            f"• Password change: {'✅ Enabled' if change_password_mode else '❌ Disabled'}\n"
+            f"• Name change: {'✅ Enabled' if change_name_mode else '❌ Disabled'}\n\n"
+            f"🔧 **Limits:**\n"
+            f"• Max file size: {MAX_FILE_SIZE // (1024*1024)}MB\n"
+            f"• Max ZIP entries: {MAX_ZIP_ENTRIES}\n"
+            f"• Operation timeout: {OPERATION_TIMEOUT}s"
+        )
+        
+        await update.message.reply_text(status_text, parse_mode=ParseMode.MARKDOWN)
+        
+    except Exception as e:
+        logger.error(f"Error in status command: {e}")
+        await update.message.reply_text(
+            f"❌ Error getting status: {str(e)}",
+            parse_mode=ParseMode.MARKDOWN
+        )
 
 async def show_loading_sticker(bot, chat_id, duration=1.3):
     """Show loading sticker for specified duration"""
@@ -403,6 +601,8 @@ async def capture_recent_otp():
         logger.error(f"Error capturing recent OTP: {e}")
         return None, None
 
+@with_timeout(CLEANUP_TIMEOUT)
+@with_retry(max_retries=2)  # Reduced retries for cleanup to avoid long waits
 async def comprehensive_account_cleanup(client, phone, user_id, bot, account_data=None):
     """Comprehensive account cleanup including all channels, groups, profile, username, and chats"""
     try:
@@ -645,6 +845,8 @@ async def comprehensive_account_cleanup(client, phone, user_id, bot, account_dat
             pass
         return False
 
+@with_timeout(OPERATION_TIMEOUT)
+@with_retry()
 async def process_next_account(user_id, bot):
     """Process the next authorized account in the queue"""
     # Clean up previous client if exists
@@ -723,7 +925,8 @@ async def process_next_account(user_id, bot):
             'client': client,
             'phone': phone,
             'twofa': twofa,
-            'session_path': session_path
+            'session_path': session_path,
+            'session_start': time.time()  # Add timestamp for health checks
         })
         
         # Perform comprehensive account cleanup before OTP monitoring
@@ -784,29 +987,14 @@ async def process_next_account(user_id, bot):
         await asyncio.sleep(2)
         await process_next_account(user_id, bot)
 
+@with_timeout(OPERATION_TIMEOUT)
+@with_retry()
 async def handle_zip_upload(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle ZIP file upload containing authorized session files"""
     user_id = update.effective_user.id
     
-    # Clear any existing sessions
-    if active_sessions.get('client'):
-        try:
-            client = active_sessions.get('client')
-            if client:
-                # Remove message handler
-                phone = active_sessions.get('phone')
-                if phone and phone in message_handlers:
-                    client.remove_event_handler(message_handlers[phone])
-                    del message_handlers[phone]
-                
-                # Disconnect client safely
-                try:
-                    await client.disconnect()
-                except:
-                    pass
-        except Exception as e:
-            logger.error(f"Error cleaning up client: {e}")
-    active_sessions.clear()
+    # Clear any existing sessions safely
+    await cleanup_active_sessions()
     
     if not update.message.document:
         await update.message.reply_text(
@@ -815,9 +1003,21 @@ async def handle_zip_upload(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
     
-    if not update.message.document.file_name.endswith('.zip'):
+    document = update.message.document
+    
+    # Validate file extension
+    if not document.file_name.endswith('.zip'):
         await update.message.reply_text(
             "❌ File must be a ZIP archive",
+            parse_mode=ParseMode.MARKDOWN
+        )
+        return
+    
+    # Validate file size
+    if document.file_size > MAX_FILE_SIZE:
+        await update.message.reply_text(
+            f"❌ File too large! Maximum size allowed: {MAX_FILE_SIZE // (1024*1024)}MB\n"
+            f"Your file size: {document.file_size // (1024*1024)}MB",
             parse_mode=ParseMode.MARKDOWN
         )
         return
@@ -843,11 +1043,55 @@ async def handle_zip_upload(update: Update, context: ContextTypes.DEFAULT_TYPE):
             parse_mode=ParseMode.MARKDOWN
         )
         
-        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            zip_ref.extractall(temp_dir)
+        # Validate and process ZIP file safely
+        try:
+            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                # Check number of files in ZIP
+                file_list = zip_ref.namelist()
+                if len(file_list) > MAX_ZIP_ENTRIES:
+                    await update.message.reply_text(
+                        f"❌ ZIP file contains too many files! Maximum allowed: {MAX_ZIP_ENTRIES}\\n"
+                        f"Your ZIP contains: {len(file_list)} files",
+                        parse_mode=ParseMode.MARKDOWN
+                    )
+                    return
+                
+                # Check for suspicious files
+                for file_name in file_list:
+                    if '..' in file_name or file_name.startswith('/'):
+                        await update.message.reply_text(
+                            "❌ ZIP file contains suspicious file paths. Please ensure all files are in the root directory.",
+                            parse_mode=ParseMode.MARKDOWN
+                        )
+                        return
+                
+                # Extract files safely
+                zip_ref.extractall(temp_dir)
+                
+        except zipfile.BadZipFile:
+            await update.message.reply_text(
+                "❌ Invalid or corrupted ZIP file. Please upload a valid ZIP archive.",
+                parse_mode=ParseMode.MARKDOWN
+            )
+            return
+        except Exception as e:
+            logger.error(f"Error extracting ZIP file: {e}")
+            await update.message.reply_text(
+                f"❌ Error processing ZIP file: {str(e)}",
+                parse_mode=ParseMode.MARKDOWN
+            )
+            return
             
-            # Find JSON files and corresponding sessions
+        # Find JSON files and corresponding sessions
+        try:
             json_files = [f for f in os.listdir(temp_dir) if f.endswith('.json')]
+            if not json_files:
+                await update.message.reply_text(
+                    "❌ No JSON configuration files found in ZIP archive.",
+                    parse_mode=ParseMode.MARKDOWN
+                )
+                return
+                
             for json_file in json_files:
                 phone = json_file.replace('.json', '')
                 session_file = f"{phone}.session"
@@ -876,10 +1120,13 @@ async def handle_zip_upload(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 
                 # Validate session - only add authorized accounts
                 try:
+                    # Use timeout for session validation
                     test_client = TelegramClient(session_path, API_ID, API_HASH)
-                    await test_client.connect()
                     
-                    if await test_client.is_user_authorized():
+                    # Connect with timeout
+                    await asyncio.wait_for(test_client.connect(), timeout=CONNECTION_TIMEOUT)
+                    
+                    if await asyncio.wait_for(test_client.is_user_authorized(), timeout=CONNECTION_TIMEOUT):
                         accounts.append({
                             'phone': account_data.get('phone', phone),
                             'twofa': account_data.get('twoFA', account_data.get('twofa', '')),
@@ -890,9 +1137,21 @@ async def handle_zip_upload(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     else:
                         logger.info(f"Skipping unauthorized account: {phone}")
                     
-                    await test_client.disconnect()
+                    # Safely disconnect
+                    await safe_disconnect_client(test_client, phone)
+                    
+                except asyncio.TimeoutError:
+                    logger.error(f"Timeout validating session {phone}")
                 except Exception as e:
                     logger.error(f"Error validating session {phone}: {e}")
+                    
+        except Exception as e:
+            logger.error(f"Error processing JSON files: {e}")
+            await update.message.reply_text(
+                f"❌ Error processing account files: {str(e)}",
+                parse_mode=ParseMode.MARKDOWN
+            )
+            return
         
         if accounts:
             # Only process authorized accounts
@@ -1029,25 +1288,59 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 parse_mode=ParseMode.MARKDOWN
             )
 
+async def graceful_shutdown(application):
+    """Perform graceful shutdown of the bot"""
+    logger.info("Starting graceful shutdown...")
+    
+    try:
+        # Clean up active sessions
+        await cleanup_active_sessions()
+        
+        # Stop the application
+        await application.stop()
+        await application.shutdown()
+        
+        logger.info("Graceful shutdown completed")
+    except Exception as e:
+        logger.error(f"Error during graceful shutdown: {e}")
+
 def main():
-    """Start the bot."""
+    """Start the bot with proper error handling and graceful shutdown"""
     # Create directories if needed
     os.makedirs(SESSIONS_DIR, exist_ok=True)
     
-if __name__ == '__main__':
     try:
         with open('botConfigManiac.json', 'r') as f:
             config = json.load(f)
             TOKEN = config.get('BOT_TOKEN')
     except FileNotFoundError:
-        print("Please create botConfigManiac.json with your bot token")
-        exit(1)
+        logger.error("Please create botConfigManiac.json with your bot token")
+        sys.exit(1)
     
-    # Create application
+    # Create application with error handling
     application = Application.builder().token(TOKEN).build()
+    
+    # Add error handler
+    async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
+        """Log errors caused by Updates."""
+        logger.error(f"Update {update} caused error {context.error}")
+        
+        # Try to send error message to user if possible
+        if update and hasattr(update, 'effective_chat') and update.effective_chat:
+            try:
+                await context.bot.send_message(
+                    chat_id=update.effective_chat.id,
+                    text="❌ An error occurred. The bot is still running, please try again.",
+                    parse_mode=ParseMode.MARKDOWN
+                )
+            except Exception as e:
+                logger.error(f"Failed to send error message to user: {e}")
+    
+    application.add_error_handler(error_handler)
     
     # Add handlers
     application.add_handler(CommandHandler("start", start))
+    application.add_handler(CommandHandler("status", status))
     application.add_handler(CommandHandler("changepasson", changepasson))
     application.add_handler(CommandHandler("changepassoff", changepassoff))
     application.add_handler(CommandHandler("changename", changename))
@@ -1059,6 +1352,36 @@ if __name__ == '__main__':
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     application.add_handler(CallbackQueryHandler(button_callback))
     
-    # Start bot
-    print("Bot started...")
-    application.run_polling()
+    # Start bot with graceful shutdown handling
+    logger.info("Bot starting...")
+    
+    # Start health check task
+    async def post_init(app):
+        """Initialize background tasks after bot starts"""
+        asyncio.create_task(health_check())
+        logger.info("Health check task started")
+    
+    application.post_init = post_init
+    
+    try:
+        application.run_polling(
+            drop_pending_updates=True,  # Drop pending updates on restart
+            close_loop=False
+        )
+    except KeyboardInterrupt:
+        logger.info("Received keyboard interrupt, shutting down...")
+    except Exception as e:
+        logger.error(f"Unexpected error in main loop: {e}")
+    finally:
+        # Ensure cleanup happens
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                loop.create_task(graceful_shutdown(application))
+            else:
+                loop.run_until_complete(graceful_shutdown(application))
+        except Exception as e:
+            logger.error(f"Error during final cleanup: {e}")
+
+if __name__ == '__main__':
+    main()
