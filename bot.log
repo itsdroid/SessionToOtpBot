@@ -10525,3 +10525,435 @@ task: <Task pending name='Task-462' coro=<MTProtoSender._recv_loop() done, defin
 2025-09-20 01:49:11,379 - __main__ - INFO - Health check: 1 active sessions
 2025-09-20 01:49:13,752 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
 2025-09-20 01:49:23,919 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:49:34,391 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:49:35,166 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:49:35,505 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:49:35,506 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:49:35,506 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:49:35,844 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:49:35,846 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:49:35,906 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:49:36,517 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:49:44,540 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:49:45,633 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:49:46,301 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:49:46,639 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:49:46,639 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:49:46,640 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:49:47,156 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:49:47,158 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:49:47,224 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:49:47,863 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:49:55,786 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:49:57,863 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:49:58,510 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:49:58,846 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:49:58,847 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:49:58,847 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:49:59,191 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:49:59,194 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:49:59,256 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:49:59,885 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:50:08,015 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:50:10,036 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:50:10,838 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:50:11,168 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:50:11,168 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:50:11,169 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:50:11,516 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:50:11,517 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:50:11,581 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:50:12,217 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:50:20,186 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:50:24,886 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:50:25,582 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:50:25,932 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:50:25,933 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:50:25,933 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:50:26,286 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:50:26,288 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:50:26,345 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:50:26,979 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:50:35,035 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:50:38,645 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:50:39,331 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:50:39,666 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:50:39,667 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:50:39,667 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:50:40,027 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:50:48,794 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:50:55,077 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:50:55,078 - __main__ - INFO - All active sessions cleaned up
+2025-09-20 01:50:56,256 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendSticker "HTTP/1.1 200 OK"
+2025-09-20 01:50:59,149 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/deleteMessage "HTTP/1.1 200 OK"
+2025-09-20 01:50:59,512 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getFile "HTTP/1.1 200 OK"
+2025-09-20 01:51:00,016 - httpx - INFO - HTTP Request: GET https://api.telegram.org/file/bot8131823932%3AAAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/documents/file_5.zip "HTTP/1.1 200 OK"
+2025-09-20 01:51:00,371 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:51:00,412 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:00,472 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:00,762 - __main__ - INFO - Added authorized account: 8801337918488
+2025-09-20 01:51:00,762 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:00,763 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:00,767 - __main__ - INFO - Successfully disconnected client for 8801337918488
+2025-09-20 01:51:00,779 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:00,840 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:01,127 - __main__ - INFO - Skipping unauthorized account: 8801623728875
+2025-09-20 01:51:01,127 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:01,128 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:01,133 - __main__ - INFO - Successfully disconnected client for 8801623728875
+2025-09-20 01:51:01,149 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:01,210 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:01,473 - __main__ - INFO - Skipping unauthorized account: 8801811450416
+2025-09-20 01:51:01,473 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:01,473 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:01,478 - __main__ - INFO - Successfully disconnected client for 8801811450416
+2025-09-20 01:51:01,490 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:01,548 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:01,897 - __main__ - INFO - Added authorized account: 8801823706041
+2025-09-20 01:51:01,898 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:01,898 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:01,902 - __main__ - INFO - Successfully disconnected client for 8801823706041
+2025-09-20 01:51:01,919 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:01,979 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:02,252 - __main__ - INFO - Added authorized account: 8801866762657
+2025-09-20 01:51:02,252 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:02,254 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:02,258 - __main__ - INFO - Successfully disconnected client for 8801866762657
+2025-09-20 01:51:02,273 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:02,332 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:02,625 - __main__ - INFO - Added authorized account: 8801922329858
+2025-09-20 01:51:02,625 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:02,626 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:02,630 - __main__ - INFO - Successfully disconnected client for 8801922329858
+2025-09-20 01:51:02,642 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:02,701 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:02,985 - __main__ - INFO - Added authorized account: 8801930367963
+2025-09-20 01:51:02,985 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:02,986 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:02,991 - __main__ - INFO - Successfully disconnected client for 8801930367963
+2025-09-20 01:51:03,335 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:51:03,685 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:51:03,686 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:03,750 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:04,410 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:51:05,242 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:51:15,392 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:51:25,543 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:51:35,697 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:51:37,689 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:51:38,442 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:51:38,778 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:51:38,778 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:38,780 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:39,126 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:51:39,128 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:51:39,190 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:51:39,811 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:51:47,838 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:51:57,988 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:52:08,458 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:52:18,649 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:52:28,796 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:52:38,951 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:52:49,104 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:52:54,910 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:52:55,592 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:52:55,926 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:52:55,927 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:52:55,927 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:52:57,337 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:52:57,339 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:52:57,402 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:52:58,034 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:53:05,063 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:53:15,212 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:53:25,361 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:53:31,030 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:53:31,672 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:53:31,992 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:53:31,992 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:53:31,993 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:53:32,323 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:53:32,325 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:53:32,385 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:53:32,999 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:53:41,178 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:53:45,083 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:53:45,716 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:53:46,045 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:53:46,046 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:53:46,046 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:53:46,384 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:53:46,387 - telethon.network.mtprotosender - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-09-20 01:53:46,449 - telethon.network.mtprotosender - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:53:47,065 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:53:55,235 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:53:58,364 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:53:59,016 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:53:59,343 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:53:59,343 - telethon.network.mtprotosender - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-09-20 01:53:59,344 - telethon.network.mtprotosender - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-09-20 01:53:59,674 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:54:08,529 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:54:08,809 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:54:08,810 - __main__ - INFO - All active sessions cleaned up
+2025-09-20 01:54:09,475 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendSticker "HTTP/1.1 200 OK"
+2025-09-20 01:54:11,386 - __main__ - INFO - Health check: 0 active sessions
+2025-09-20 01:54:11,996 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/deleteMessage "HTTP/1.1 200 OK"
+2025-09-20 01:54:12,623 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getFile "HTTP/1.1 200 OK"
+2025-09-20 01:54:12,772 - httpx - INFO - HTTP Request: GET https://api.telegram.org/file/bot8131823932%3AAAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/documents/file_6.zip "HTTP/1.1 200 OK"
+2025-09-20 01:54:13,128 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:54:13,160 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:13,299 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:13,619 - __main__ - ERROR - Error validating session 201006165521: The authorization key (session file) was used under two different IP addresses simultaneously, and can no longer be used. Use the same session exclusively, or use different sessions (caused by InvokeWithLayerRequest(InitConnectionRequest(GetConfigRequest)))
+2025-09-20 01:54:13,625 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:13,765 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:14,650 - __main__ - INFO - Added authorized account: 201013128297
+2025-09-20 01:54:14,650 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:14,651 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:14,655 - __main__ - INFO - Successfully disconnected client for 201013128297
+2025-09-20 01:54:14,662 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:14,807 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:15,490 - __main__ - INFO - Added authorized account: 201013452129
+2025-09-20 01:54:15,490 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:15,491 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:15,495 - __main__ - INFO - Successfully disconnected client for 201013452129
+2025-09-20 01:54:15,499 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:15,638 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:16,245 - __main__ - INFO - Added authorized account: 201018023630
+2025-09-20 01:54:16,246 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:16,246 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:16,251 - __main__ - INFO - Successfully disconnected client for 201018023630
+2025-09-20 01:54:16,258 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:16,393 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:17,389 - __main__ - INFO - Added authorized account: 201018321829
+2025-09-20 01:54:17,389 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:17,390 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:17,398 - __main__ - INFO - Successfully disconnected client for 201018321829
+2025-09-20 01:54:17,402 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:17,542 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:18,961 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:54:29,109 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:54:39,257 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:54:47,406 - __main__ - ERROR - Timeout validating session 201018687764
+2025-09-20 01:54:47,412 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:47,553 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:48,227 - __main__ - INFO - Added authorized account: 201020928852
+2025-09-20 01:54:48,227 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:48,227 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:48,231 - __main__ - INFO - Successfully disconnected client for 201020928852
+2025-09-20 01:54:48,910 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:54:49,261 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:54:49,263 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:54:49,403 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:54:49,409 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:54:50,615 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:54:59,569 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:55:06,800 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:55:07,439 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:55:07,765 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:55:07,767 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-20 01:55:07,769 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:55:08,108 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:55:08,112 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:55:08,258 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:55:09,503 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:55:16,951 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:55:17,783 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:55:18,478 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:55:18,818 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:55:18,818 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-20 01:55:18,819 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:55:19,168 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:55:19,170 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:55:19,315 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:55:20,296 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:55:27,936 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:55:38,088 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:55:39,906 - telethon.client.updates - INFO - Got difference for account updates
+2025-09-20 01:55:48,869 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:55:59,020 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:56:04,997 - __main__ - INFO - Bot starting...
+2025-09-20 01:56:05,551 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getMe "HTTP/1.1 200 OK"
+2025-09-20 01:56:05,553 - __main__ - INFO - Health check task started
+2025-09-20 01:56:05,553 - __main__ - INFO - Health check: 0 active sessions
+2025-09-20 01:56:05,717 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/deleteWebhook "HTTP/1.1 200 OK"
+2025-09-20 01:56:05,719 - apscheduler.scheduler - INFO - Scheduler started
+2025-09-20 01:56:05,719 - telegram.ext.Application - INFO - Application started
+2025-09-20 01:56:06,456 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:06,457 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:10,610 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:10,611 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:11,777 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:11,778 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:16,899 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:16,900 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:18,573 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:18,573 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:20,838 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-715' coro=<Connection._send_loop() done, defined at C:\Users\shubh\AppData\Local\Programs\Python\Python313\Lib\site-packages\telethon\network\connection\connection.py:310> wait_for=<Future cancelled>>
+2025-09-20 01:56:20,840 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-716' coro=<Connection._recv_loop() running at C:\Users\shubh\AppData\Local\Programs\Python\Python313\Lib\site-packages\telethon\network\connection\connection.py:355> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-09-20 01:56:20,840 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-717' coro=<MTProtoSender._send_loop() done, defined at C:\Users\shubh\AppData\Local\Programs\Python\Python313\Lib\site-packages\telethon\network\mtprotosender.py:446> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-09-20 01:56:20,840 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-718' coro=<MTProtoSender._recv_loop() done, defined at C:\Users\shubh\AppData\Local\Programs\Python\Python313\Lib\site-packages\telethon\network\mtprotosender.py:497> wait_for=<Future cancelled>>
+2025-09-20 01:56:23,988 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:23,989 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:26,409 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:26,410 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:29,947 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:29,948 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:33,496 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:33,496 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:39,096 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:39,097 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:44,640 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:44,640 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:56:52,714 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:56:52,715 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:57:00,788 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:57:00,789 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:57:10,780 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:57:13,707 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:57:13,708 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:57:17,868 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:57:17,868 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:57:24,866 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:57:35,025 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:57:35,457 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:57:35,457 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:57:39,634 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:57:39,635 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:57:46,623 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:57:56,780 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:58:05,777 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:05,778 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:06,509 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:58:07,194 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendSticker "HTTP/1.1 200 OK"
+2025-09-20 01:58:08,833 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/deleteMessage "HTTP/1.1 200 OK"
+2025-09-20 01:58:09,209 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:58:10,144 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:10,144 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:11,306 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:11,307 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:11,910 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:58:12,235 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-09-20 01:58:12,573 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/editMessageText "HTTP/1.1 200 OK"
+2025-09-20 01:58:12,573 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-20 01:58:12,574 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:58:12,916 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:58:12,917 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-20 01:58:13,057 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-20 01:58:14,044 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/sendMessage "HTTP/1.1 200 OK"
+2025-09-20 01:58:15,981 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:15,982 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:17,139 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:17,140 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:22,549 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:22,549 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:24,206 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:24,207 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:27,759 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:27,759 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:33,177 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:33,178 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:38,740 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:38,741 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:42,283 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:42,284 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:50,345 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:50,345 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:58:55,913 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:58:55,914 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:59:05,922 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:59:07,793 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:59:07,794 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:59:11,401 - __main__ - INFO - Health check: 1 active sessions
+2025-09-20 01:59:11,951 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:59:11,952 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:59:18,961 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:59:29,119 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:59:29,524 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:59:29,524 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:59:33,677 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:59:33,678 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 01:59:40,686 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:59:50,843 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 01:59:59,792 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 01:59:59,792 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:00:03,959 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:00:03,960 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:00:10,960 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:00:21,150 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:00:31,338 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:00:34,797 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:00:34,797 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:00:39,002 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:00:39,003 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:00:46,014 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:00:56,202 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:01:05,564 - __main__ - INFO - Health check: 0 active sessions
+2025-09-20 02:01:06,360 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:01:09,708 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:01:09,709 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:01:13,889 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:01:13,890 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:01:20,881 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:01:31,038 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:01:41,193 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:01:44,418 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:01:44,419 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:01:48,586 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:01:48,587 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:01:55,591 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:02:05,753 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:02:15,910 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:02:19,119 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:02:19,120 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:02:23,290 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:02:23,291 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:02:30,293 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:02:40,450 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:02:51,006 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:02:53,782 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:02:53,782 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:02:57,944 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:02:57,945 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:03:04,954 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:03:15,111 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:03:25,277 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:03:28,441 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:03:28,441 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:03:32,601 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:03:32,602 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:03:39,603 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:03:49,759 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:03:59,919 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:04:03,108 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:04:03,108 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:04:07,257 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:04:07,257 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:04:11,410 - __main__ - INFO - Health check: 1 active sessions
+2025-09-20 02:04:14,266 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:04:24,423 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:04:34,586 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:04:37,775 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:04:37,775 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:04:41,943 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:04:41,943 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:04:48,947 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:04:59,107 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:05:09,264 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:05:12,410 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:05:12,411 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:05:16,578 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:05:16,578 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:05:23,583 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:05:33,742 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:05:43,904 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
+2025-09-20 02:05:47,051 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:05:47,051 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:05:51,209 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 409 Conflict"
+2025-09-20 02:05:51,210 - __main__ - ERROR - Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-20 02:05:58,219 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8131823932:AAHWOhN-mjTXRKDiINHQVYv9n3kCzrPti0c/getUpdates "HTTP/1.1 200 OK"
