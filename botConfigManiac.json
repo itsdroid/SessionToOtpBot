@@ -1,0 +1,7 @@
+{
+    "SESSIONS_DIR": "sessions",
+    "API_ID": 2040,
+    "API_HASH": "b18441a1ff607e10a989891a5462e627",
+    "BOT_TOKEN": "7565156002:AAGSyza3Z4gXH7iqdjbTHNOiBpX31BoGgDU",
+    "MONGODB_URL": "mongodb+srv://shubham77:<shubham77>@authprofile.paqve2i.mongodb.net/?retryWrites=true&w=majority&appName=authprofile"
+}
